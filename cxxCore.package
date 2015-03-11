@@ -1,0 +1,4 @@
+<manifest>
+    <include path="."/>
+    <include path="/usr/include/qt5"/>
+</manifest>
