@@ -1,4 +1,6 @@
 <manifest>
     <include path="."/>
     <include path="/usr/include/qt5"/>
+
+    <source path="ConfigManager.cpp"/>
 </manifest>
