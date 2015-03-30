@@ -5,9 +5,6 @@
 # Control Node base wscript
 # Kenneth Wells, 2015
 
-from waflib import Options, Logs
-from waflib import Configure
-
 def configure(conf):
     pass
 
