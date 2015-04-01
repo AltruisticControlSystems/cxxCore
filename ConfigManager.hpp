@@ -19,31 +19,34 @@
 //-----------------------------------------------------------------------------
 #include "SingletonCxxQml.hpp"
 
-#include <QMap>
+#include <QHash>
 #include <QString>
 
 namespace cxxCore
 {
 
-    class ConfigManager: public SingletonCxxQml<ConfigManager>
-    {
-    public:
-        //! loadConfigs
-        bool loadConfigs
-            (
-            const QString& aFilePath //!< The path to the config file
-            );
+class ConfigManager: public SingletonCxxQml<ConfigManager>
+{
+public:
 
-        //! getConfig
-        QString getConfig
-            (
-            const QString& aKey //!< The key to retrieve the config from the
-                                //!< map of configurations
-            ) const;
+    // SingletonCxxQml
+    virtual void init();
+    virtual void deInit();
 
-    private:
-        QMap<QString,QString> mConfigMap; //!< The map of configurations
-    };
+    // Local Methods
+    bool loadConfigs
+        (
+        const QString& aFilePath
+        );
+
+    QString getConfig
+        (
+        const QString& aKey
+        ) const;
+
+private:
+    QHash<QString,QString> mConfigHash;
+};
 
 }// Namespace cxxCore
 
