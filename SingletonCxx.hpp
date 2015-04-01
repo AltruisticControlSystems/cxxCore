@@ -31,6 +31,10 @@ public:
         return instance;
     }
 
+    virtual void init() = 0;
+
+    virtual void deInit() = 0;
+
 private:
     SingletonCxx(){}
 };
